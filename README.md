@@ -10,10 +10,12 @@ The script reads the log file line by line using a generator (yield), which allo
 2. Uses a generator to minimize memory usage.
 3. Counts the number of requests for each IP address.
 4. Saves the results to a text file in the following format:
-   
+
+```
 128.148.46.126: 15 
 52.56.245.28: 8
 122.100.81.4: 3
+```
 
 ## Implementation
 
