@@ -1,6 +1,6 @@
 #Variables 
-old_log_file = "text.nginx.log"
-new_log_file = "text2.nginx.log"
+old_log_file = "nginx.log"
+new_log_file = "result.nginx.log"
 
 #The function as a generator extracts IP addresses without storing the temporary variable with this data in RAM and saving memory
 def extract_ip(old_log_file):
@@ -10,12 +10,9 @@ def extract_ip(old_log_file):
 
 #The function extracts the data from the dictionary and writes the data in the needed format to a file 
 def write_to_file(new_log_file, ip_list):
-    with open(new_log_file, 'a', encoding='utf-8') as f:
-        # for item in ip_list.items(): # detect elements names of massive
-        #     print(item)
-        #     print(type(item))
-        for ip, count in ip_list.items():
-           output_line = f"ip: count"
+    with open(new_log_file, 'w+', encoding='utf-8') as f:
+        for x0, x1 in ip_list.items():
+           output_line = f"{x0}: {x1}\n"
            f.write(output_line)
             
 #The function creates the dictionary that stores IP addressess and their number of request
